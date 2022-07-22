@@ -7,14 +7,123 @@ body {
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #fafafa;
+  background-color: white;
   color: #212121;
   line-height: 1.5;
+  margin: 0;
 }
 
-#search-box {
+.search {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  z-index: 10;
+}
+
+.search-form {
+  position: relative;
   font: inherit;
-  padding: 8px;
-  max-width: 320px;
-  margin-bottom: 16px;
+  padding: 30px;
+  width: 500px;
+}
+input {
+  height: 40px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid royalblue;
+  border-radius: 20px;
+}
+
+button[type='submit'] {
+  background-color: royalblue;
+  border: none;
+  border-radius: 50px;
+  height: 34px;
+  width: 70px;
+  position: absolute;
+  top: 33px;
+  right: 34px;
+  font-size: small;
+  color: white;
+  cursor: pointer;
+}
+
+.gallery {
+  display: grid;
+  max-width: 1140px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-auto-rows: 240px;
+  grid-gap: 12px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 100px 10px 10px 10px;
+}
+
+.gallery__item {
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+}
+
+.gallery__image:hover {
+  transform: scale(1.03);
+}
+
+.gallery__image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: transform var(--animation-duration) var(--timing-function);
+}
+
+.photo-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.photo-card:hover .info {
+  transform: translateY(0);
+}
+
+.info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: royalblue;
+  text-align: center;
+  background-color: rgba(15, 15, 15, 0.1);
+  opacity: 1;
+  transform: translateY(120%);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: transform;
+}
+
+.info-item {
+  margin: 0;
+  padding: 0;
+}
+
+.info-item-value {
+  color: white;
+  font-size: 8px;
+}
+
+.load-more {
+  display: block;
+  margin: 50px auto;
+  height: 34px;
+  min-width: 100px;
+  color: #fff;
+  cursor: pointer;
+  background-color: #4169e1;
+  border: none;
+  border-radius: 50px;
+  font-size: small;
 }
