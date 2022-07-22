@@ -9,7 +9,6 @@ import resetPage from './fetch-image';
 const searchForm = document.querySelector('.search-form');
 const searchInput = document.querySelector('[name="searchQuery"]');
 const loadMoreBtn = document.querySelector('.load-more');
-const aaa = document.querySelector('.photo-card');
 
 searchForm.addEventListener('submit', onSearchFormSubmit);
 loadMoreBtn.addEventListener('click', onLoadMoreBtnClick);
