@@ -18,7 +18,7 @@ export default class Utils {
       Notify.failure(
         'Sorry, there are no images matching your search query. Please try again.'
       );
-      loadMoreBtn.classList.remove('hiden');
+      document.querySelector('.load-more').classList.remove('hiden');
     } else if (value.hits.length > 0) {
       Notify.success(`Hooray! We found ${value.totalHits} images.`);
     }
