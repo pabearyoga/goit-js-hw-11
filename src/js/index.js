@@ -1,6 +1,8 @@
 import '../css/styles.css';
+
 // import axios from 'axios';
 // import randomWords from 'random-words';
+
 import SearchApiService from './fetch-image';
 import Utils from './util';
 import renderGallery from './render-gallery';

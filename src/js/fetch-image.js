@@ -1,3 +1,4 @@
+import { Loading } from 'notiflix/build/notiflix-loading-aio';
 export default class SearchApiService {
   constructor() {
     this.searchQuery = '';
@@ -8,7 +9,9 @@ export default class SearchApiService {
 
   fetchImage() {
     const KEY = '28778434-1483e606d41ba08d2549939d9';
-
+    Loading.pulse({
+      svgColor: '#4169e1',
+    });
     return fetch(
       `https://pixabay.com/api/?key=${KEY}&q=${this.searchQuery}&image_type=photo&orientation=horizontal&safesearch=true&per_page=${this.perPage}&page=${this.page}`
     ).then(response => {
@@ -17,6 +20,7 @@ export default class SearchApiService {
       }
       return response.json().then(data => {
         this.incrementPage();
+        Loading.remove();
         return data;
       });
     });
