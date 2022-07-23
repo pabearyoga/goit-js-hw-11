@@ -6,12 +6,14 @@ import randomWords from 'random-words';
 import SearchApiService from './fetch-image';
 import renderGallery from './render-gallery';
 import darkMode from './dark-mode';
+import refreshPage from './refresh-page';
 
 const searchForm = document.querySelector('.search-form');
 const loadMoreBtn = document.querySelector('.load-more');
 const searchApiService = new SearchApiService();
 const themeBtnL = document.querySelector('.them-l');
 const themeBtnD = document.querySelector('.them-d');
+const resetBtn = document.querySelector('.reset');
 
 let perPage = 40;
 
@@ -19,6 +21,7 @@ searchForm.addEventListener('submit', onSearch);
 loadMoreBtn.addEventListener('click', onLoadMoreBtnClick);
 themeBtnL.addEventListener('click', darkMode);
 themeBtnD.addEventListener('click', darkMode);
+resetBtn.addEventListener('click', refreshPage);
 
 function onSearch(event) {
   event.preventDefault();
@@ -42,7 +45,7 @@ function addLoadMore() {
   loadMoreBtn.classList.add('hiden');
 }
 
-function removeLoadMore() {
+export default function removeLoadMore() {
   loadMoreBtn.classList.remove('hiden');
 }
 

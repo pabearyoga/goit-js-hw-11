@@ -13,6 +13,11 @@ body {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .search {
   position: fixed;
   width: 100%;
@@ -136,13 +141,15 @@ input {
   background-color: #212121;
 }
 
-.them-wrapper {
+.them-wrapper,
+.reser-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.them-l {
+.them-l,
+.reset {
   display: block;
   height: 34px;
   width: 30px;
@@ -155,7 +162,8 @@ input {
   border: 1px solid royalblue;
 }
 
-.them-l:hover {
+.them-l:hover,
+.reset:hover {
   background-color: royalblue;
   color: white;
 }
@@ -176,4 +184,19 @@ input {
 .them-d:hover {
   background-color: white;
   color: royalblue;
+}
+
+.reset-dark {
+  background-color: royalblue;
+  color: white;
+}
+.reset-dark:hover {
+  background-color: white;
+  color: royalblue;
+}
+
+.features {
+  width: 100px;
+  display: flex;
+  justify-content: space-around;
 }
