@@ -1,15 +1,7 @@
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 export default function renderGallery(images) {
-  if (images.hits.length === 0) {
-    Notify.failure(
-      'Sorry, there are no images matching your search query. Please try again.'
-    );
-  } else if (images.hits.length > 0) {
-    Notify.success(`Hooray! We found ${images.totalHits} images.`);
-  }
   const markup = images.hits
     .map(
       ({

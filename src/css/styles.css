@@ -116,7 +116,7 @@ button[type='submit'] {
 }
 
 .load-more {
-  display: block;
+  display: none;
   margin: 50px auto;
   height: 34px;
   min-width: 100px;
@@ -126,4 +126,8 @@ button[type='submit'] {
   border: none;
   border-radius: 50px;
   font-size: small;
+}
+
+.hiden {
+  display: block;
 }

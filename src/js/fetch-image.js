@@ -1,22 +1,38 @@
-let page = null;
+export default class SearchApiService {
+  constructor() {
+    this.searchQuery = '';
+    this.page = 1;
+  }
 
-export default function incrementPage() {
-  return page += 1;
-}
+  fetchImage() {
+    const KEY = '28778434-1483e606d41ba08d2549939d9';
 
-export const a =  function resetPage() {
- return page = 1;
-}
+    return fetch(
+      `https://pixabay.com/api/?key=${KEY}&q=${this.searchQuery}&image_type=photo&orientation=horizontal&safesearch=true&per_page=40&page=${this.page}`
+    ).then(response => {
+      if (!response.ok) {
+        throw new Error(response.status);
+      }
+      return response.json().then(data => {
+        this.incrementPage();
+        return data;
+      });
+    });
+  }
 
-export default function fetchImage(search) {
-  const KEY = '28778434-1483e606d41ba08d2549939d9';
+  incrementPage() {
+    this.page += 1;
+  }
 
-  return fetch(
-    `https://pixabay.com/api/?key=${KEY}&q=${search}&image_type=photo&orientation=horizontal&safesearch=true&per_page=40&page=${page}`
-  ).then(response => {
-    if (!response.ok) {
-      throw new Error(response.status);
-    } return response.json().then(x => { incrementPage(); return x });
-  });
+  resetPage() {
+    this.page = 1;
+  }
 
+  get query() {
+    return this.searchQuery;
+  }
+
+  set query(newQuery) {
+    this.searchQuery = newQuery;
+  }
 }
