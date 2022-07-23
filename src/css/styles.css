@@ -164,7 +164,8 @@ input {
 }
 
 .them-l:hover,
-.reset:hover {
+.reset:hover,
+.reset-dark {
   background-color: royalblue;
   color: white;
 }
@@ -175,15 +176,7 @@ input {
   background-color: royalblue;
 }
 
-.them-d:hover {
-  background-color: white;
-  color: royalblue;
-}
-
-.reset-dark {
-  background-color: royalblue;
-  color: white;
-}
+.them-d:hover,
 .reset-dark:hover {
   background-color: white;
   color: royalblue;

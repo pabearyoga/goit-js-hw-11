@@ -1,77 +1,42 @@
 import '../css/styles.css';
 // import axios from 'axios';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { Report } from 'notiflix/build/notiflix-report-aio';
-import randomWords from 'random-words';
+// import randomWords from 'random-words';
 import SearchApiService from './fetch-image';
+import Utils from './util';
 import renderGallery from './render-gallery';
-import darkMode from './dark-mode';
-import refreshPage from './refresh-page';
 
-const searchForm = document.querySelector('.search-form');
-const loadMoreBtn = document.querySelector('.load-more');
-const searchApiService = new SearchApiService();
-const themeBtnL = document.querySelector('.them-l');
-const themeBtnD = document.querySelector('.them-d');
-const resetBtn = document.querySelector('.reset');
+const refs = {
+  searchForm: document.querySelector('.search-form'),
+  loadMoreBtn: document.querySelector('.load-more'),
+  searchApiService: new SearchApiService(),
+  utils: new Utils(),
+  themeBtnL: document.querySelector('.them-l'),
+  themeBtnD: document.querySelector('.them-d'),
+  resetBtn: document.querySelector('.reset'),
+};
 
-let perPage = 40;
-
-searchForm.addEventListener('submit', onSearch);
-loadMoreBtn.addEventListener('click', onLoadMoreBtnClick);
-themeBtnL.addEventListener('click', darkMode);
-themeBtnD.addEventListener('click', darkMode);
-resetBtn.addEventListener('click', refreshPage);
+refs.searchForm.addEventListener('submit', onSearch);
+refs.loadMoreBtn.addEventListener('click', onLoadMoreBtnClick);
+refs.themeBtnL.addEventListener('click', refs.utils.darkMode);
+refs.themeBtnD.addEventListener('click', refs.utils.darkMode);
+refs.resetBtn.addEventListener('click', refs.utils.refreshPage);
 
 function onSearch(event) {
   event.preventDefault();
-  perPage = 40;
-  searchApiService.query = event.currentTarget.elements.searchQuery.value;
-  searchApiService.resetPage();
-  clearGallery();
-  searchApiService.fetchImage().then(searchSubmitFilter).then(renderGallery);
-  addLoadMore();
+
+  refs.searchApiService.query = event.currentTarget.elements.searchQuery.value;
+  refs.searchApiService.resetPage();
+  refs.utils.clearGallery();
+  refs.searchApiService
+    .fetchImage()
+    .then(refs.utils.searchSubmitFilter)
+    .then(renderGallery);
+  refs.utils.addLoadMore();
 }
 
 function onLoadMoreBtnClick() {
-  searchApiService.fetchImage().then(loadMoreFilter).then(renderGallery);
+  refs.searchApiService
+    .fetchImage()
+    .then(refs.utils.loadMoreFilter)
+    .then(renderGallery);
 }
-
-function clearGallery() {
-  document.querySelector('.gallery').innerHTML = '';
-}
-
-function addLoadMore() {
-  loadMoreBtn.classList.add('hiden');
-}
-
-export default function removeLoadMore() {
-  loadMoreBtn.classList.remove('hiden');
-}
-
-function searchSubmitFilter(value) {
-  if (value.hits.length === 0) {
-    Notify.failure(
-      'Sorry, there are no images matching your search query. Please try again.'
-    );
-    removeLoadMore();
-  } else if (value.hits.length > 0) {
-    Notify.success(`Hooray! We found ${value.totalHits} images.`);
-  }
-  return value;
-}
-
-function loadMoreFilter(value) {
-  perPage += value.hits.length;
-  if (value.totalHits <= perPage) {
-    Report.failure(
-      'Search',
-      "We're sorry, but you've reached the end of search results.",
-      'Okay'
-    );
-    return loadMoreBtn.classList.remove('hiden');
-  }
-  return value;
-}
-// randomWords
-// console.log(randomWords());
