@@ -8,7 +8,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: white;
-  color: #212121;
+  color: rgb(33, 33, 33);
   line-height: 1.5;
   margin: 0;
 }
@@ -36,7 +36,7 @@ input {
   border-radius: 20px;
 }
 
-button[type='submit'] {
+.search-btn {
   background-color: royalblue;
   border: none;
   border-radius: 50px;
@@ -130,4 +130,50 @@ button[type='submit'] {
 
 .hiden {
   display: block;
+}
+
+.dark {
+  background-color: #212121;
+}
+
+.them-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.them-l {
+  display: block;
+  height: 34px;
+  width: 30px;
+  color: royalblue;
+  cursor: pointer;
+  background-color: white;
+  border: none;
+  border-radius: 100px;
+  font-size: large;
+  border: 1px solid royalblue;
+}
+
+.them-l:hover {
+  background-color: royalblue;
+  color: white;
+}
+
+.them-d {
+  display: none;
+  height: 34px;
+  width: 30px;
+  color: white;
+  cursor: pointer;
+  background-color: royalblue;
+  border: none;
+  border-radius: 100px;
+  font-size: large;
+  border: 1px solid royalblue;
+}
+
+.them-d:hover {
+  background-color: white;
+  color: royalblue;
 }

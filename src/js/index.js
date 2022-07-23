@@ -5,15 +5,20 @@ import { Report } from 'notiflix/build/notiflix-report-aio';
 import randomWords from 'random-words';
 import SearchApiService from './fetch-image';
 import renderGallery from './render-gallery';
+import darkMode from './dark-mode';
 
 const searchForm = document.querySelector('.search-form');
 const loadMoreBtn = document.querySelector('.load-more');
 const searchApiService = new SearchApiService();
+const themeBtnL = document.querySelector('.them-l');
+const themeBtnD = document.querySelector('.them-d');
 
 let perPage = 40;
 
 searchForm.addEventListener('submit', onSearch);
 loadMoreBtn.addEventListener('click', onLoadMoreBtnClick);
+themeBtnL.addEventListener('click', darkMode);
+themeBtnD.addEventListener('click', darkMode);
 
 function onSearch(event) {
   event.preventDefault();
