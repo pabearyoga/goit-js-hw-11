@@ -149,10 +149,11 @@ input {
 }
 
 .them-l,
+.them-d,
 .reset {
   display: block;
   height: 34px;
-  width: 30px;
+  width: 34px;
   color: royalblue;
   cursor: pointer;
   background-color: white;
@@ -170,15 +171,8 @@ input {
 
 .them-d {
   display: none;
-  height: 34px;
-  width: 30px;
   color: white;
-  cursor: pointer;
   background-color: royalblue;
-  border: none;
-  border-radius: 100px;
-  font-size: large;
-  border: 1px solid royalblue;
 }
 
 .them-d:hover {
