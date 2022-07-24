@@ -1,6 +1,6 @@
 import '../css/styles.css';
 
-import axios from 'axios';
+// import axios from 'axios';
 // import randomWords from 'random-words';
 
 import SearchApiService from './fetch-image';
