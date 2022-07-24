@@ -42,11 +42,14 @@ export default class Utils {
   darkMode() {
     document.querySelector('body').classList.toggle('dark');
     document.querySelector('.search').classList.toggle('dark');
-    document.querySelector('.reset').classList.toggle('reset-dark');
+    document.querySelector('[name="searchQuery"]').classList.toggle('input-d');
+    document.querySelector('.them-d').classList.toggle('dark-h');
+    document.querySelector('.reset').classList.toggle('dark-h');
 
     if (document.querySelector('.search').classList.contains('dark')) {
       document.querySelector('.them-l').style.display = 'none';
       document.querySelector('.them-d').style.display = 'block';
+      // document.querySelector('.load-more').classList.toggle('dark-h');
       return;
     }
     document.querySelector('.them-d').style.display = 'none';

@@ -33,12 +33,18 @@ a {
   padding: 30px;
   width: 500px;
 }
+
 input {
   height: 40px;
   width: 100%;
   padding: 10px;
   border: 1px solid royalblue;
   border-radius: 20px;
+  outline: none;
+}
+
+input:hover {
+  box-shadow: 0 2px 8px 1px rgba(65, 105, 225, 0.9);
 }
 
 .search-btn {
@@ -72,15 +78,15 @@ input {
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
 }
 
-.gallery__image:hover {
-  transform: scale(1.03);
-}
-
 .gallery__image {
   height: 100%;
   width: 100%;
   object-fit: cover;
   transition: transform var(--animation-duration) var(--timing-function);
+}
+
+.gallery__image:hover {
+  transform: scale(1.03);
 }
 
 .photo-card {
@@ -103,7 +109,7 @@ input {
   font-size: 10px;
   color: royalblue;
   text-align: center;
-  background-color: rgba(15, 15, 15, 0.1);
+  background-color: rgba(15, 15, 15, 0.7);
   opacity: 1;
   transform: translateY(120%);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -123,8 +129,8 @@ input {
 .load-more {
   display: none;
   margin: 50px auto;
-  height: 34px;
-  min-width: 100px;
+  height: 50px;
+  width: 50px;
   color: #fff;
   cursor: pointer;
   background-color: #4169e1;
@@ -150,13 +156,14 @@ input {
 
 .them-l,
 .them-d,
-.reset {
+.reset,
+.dark-h {
   display: block;
   height: 34px;
   width: 34px;
-  color: royalblue;
+  color: white;
   cursor: pointer;
-  background-color: white;
+  background-color: royalblue;
   border: none;
   border-radius: 100px;
   font-size: large;
@@ -164,26 +171,27 @@ input {
 }
 
 .them-l:hover,
+.them-d:hover,
 .reset:hover,
-.reset-dark {
-  background-color: royalblue;
-  color: white;
+.load-more:hover {
+  background-color: white;
+  color: royalblue;
+  border: 1px solid royalblue;
+  box-shadow: 0 2px 8px 1px rgba(65, 105, 225, 0.9);
 }
 
 .them-d {
   display: none;
-  color: white;
-  background-color: royalblue;
-}
-
-.them-d:hover,
-.reset-dark:hover {
-  background-color: white;
-  color: royalblue;
 }
 
 .features {
   width: 100px;
   display: flex;
   justify-content: space-around;
+}
+
+.dark-h:hover,
+.input-d {
+  background-color: rgb(48 49 52);
+  color: white;
 }
