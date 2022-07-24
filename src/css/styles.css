@@ -25,26 +25,33 @@ a {
   justify-content: center;
   background-color: white;
   z-index: 10;
+  padding: 40px 0;
+}
+
+.search-fixed {
+  box-shadow: 0 2px 8px 1px rgba(65, 105, 225, 0.9);
 }
 
 .search-form {
   position: relative;
-  font: inherit;
-  padding: 30px;
   width: 500px;
-}
-
-input {
   height: 40px;
-  width: 100%;
-  padding: 10px;
+  padding: 0 15px;
   border: 1px solid royalblue;
   border-radius: 20px;
   outline: none;
 }
 
-input:hover {
+.search-form:hover {
   box-shadow: 0 2px 8px 1px rgba(65, 105, 225, 0.9);
+}
+
+input {
+  height: 35px;
+  width: 87%;
+  background-color: transparent;
+  border: none;
+  outline: none;
 }
 
 .search-btn {
@@ -54,8 +61,8 @@ input:hover {
   height: 34px;
   width: 70px;
   position: absolute;
-  top: 33px;
-  right: 33px;
+  top: 2px;
+  right: 2px;
   font-size: small;
   color: white;
   cursor: pointer;
@@ -70,7 +77,7 @@ input:hover {
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  padding: 100px 10px 10px 10px;
+  padding: 140px 10px 10px 10px;
 }
 
 .gallery__item {

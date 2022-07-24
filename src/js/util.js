@@ -11,6 +11,7 @@ export default class Utils {
 
   addLoadMore() {
     document.querySelector('.load-more').classList.add('hiden');
+    document.querySelector('.search').classList.add('search-fixed');
   }
 
   searchSubmitFilter(value) {
@@ -43,6 +44,7 @@ export default class Utils {
     document.querySelector('body').classList.toggle('dark');
     document.querySelector('.search').classList.toggle('dark');
     document.querySelector('[name="searchQuery"]').classList.toggle('input-d');
+    document.querySelector('.search-form').classList.toggle('input-d');
     document.querySelector('.them-d').classList.toggle('dark-h');
     document.querySelector('.reset').classList.toggle('dark-h');
 
@@ -58,6 +60,7 @@ export default class Utils {
 
   refreshPage() {
     document.querySelector('.load-more').classList.remove('hiden');
+    document.querySelector('.search').classList.remove('search-fixed');
     document.querySelector('.gallery').innerHTML = '';
     document.querySelector('.search-form').reset();
   }
