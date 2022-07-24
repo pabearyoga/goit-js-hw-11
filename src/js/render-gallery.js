@@ -1,6 +1,10 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
+const lightbox = new SimpleLightbox('.photo-card a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});
 export default function renderGallery(images) {
   const markup = images.hits
     .map(
@@ -37,9 +41,9 @@ export default function renderGallery(images) {
     .join('');
 
   document.querySelector('.gallery').insertAdjacentHTML('beforeend', markup);
-
-  const lightbox = new SimpleLightbox('.photo-card a', {
-    captionsData: 'alt',
-    captionDelay: 250,
-  });
+  // const lightbox = new SimpleLightbox('.photo-card a', {
+  //   captionsData: 'alt',
+  //   captionDelay: 250,
+  // });
+  lightbox.refresh();
 }
