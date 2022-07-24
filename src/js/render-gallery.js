@@ -41,9 +41,5 @@ export default function renderGallery(images) {
     .join('');
 
   document.querySelector('.gallery').insertAdjacentHTML('beforeend', markup);
-  // const lightbox = new SimpleLightbox('.photo-card a', {
-  //   captionsData: 'alt',
-  //   captionDelay: 250,
-  // });
   lightbox.refresh();
 }
