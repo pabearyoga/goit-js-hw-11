@@ -1,4 +1,5 @@
 import '../css/styles.css';
+import '../css/text-anim.css';
 import SearchApiService from './fetch-image';
 import Utils from './util';
 import renderGallery from './render-gallery';
