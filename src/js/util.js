@@ -1,7 +1,7 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { Report } from 'notiflix/build/notiflix-report-aio';
 import SearchApiService from './fetch-image';
-
+import swal from 'sweetalert';
 const searchApiService = new SearchApiService();
 
 export default class Utils {
@@ -32,13 +32,9 @@ export default class Utils {
     searchApiService.incrementPerPage();
     if (value.totalHits < searchApiService.perPage) {
       document.querySelector('.load-more').classList.remove('hiden');
-      return Report.failure(
-        'Search',
-        "We're sorry, but you've reached the end of search results.",
-        'Okay'
+      return Notify.info(
+        "We're sorry, but you've reached the end of search results."
       );
-      // }
-      // }
     }
     return value;
   }

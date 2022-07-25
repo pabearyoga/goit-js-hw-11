@@ -195,6 +195,7 @@ input {
   width: 100px;
   display: flex;
   justify-content: space-around;
+  margin-left: 10px;
 }
 
 .dark-h:hover,
