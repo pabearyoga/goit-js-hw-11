@@ -29,13 +29,13 @@ export default class Utils {
 
   loadMoreFilter(value) {
     searchApiService.incrementPerPage();
-    if (value.totalHits <= searchApiService.perPage) {
-      Report.failure(
+    if (value.totalHits < searchApiService.perPage) {
+      document.querySelector('.load-more').classList.remove('hiden');
+      return Report.failure(
         'Search',
         "We're sorry, but you've reached the end of search results.",
         'Okay'
       );
-      return document.querySelector('.load-more').classList.remove('hiden');
     }
     return value;
   }

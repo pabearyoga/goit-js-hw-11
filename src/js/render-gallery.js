@@ -6,18 +6,19 @@ const lightbox = new SimpleLightbox('.photo-card a', {
   captionDelay: 250,
 });
 export default function renderGallery(images) {
-  const markup = images.hits
-    .map(
-      ({
-        webformatURL,
-        largeImageURL,
-        tags,
-        likes,
-        views,
-        comments,
-        downloads,
-      }) => {
-        return `<div class="photo-card">
+  if (images) {
+    const markup = images.hits
+      .map(
+        ({
+          webformatURL,
+          largeImageURL,
+          tags,
+          likes,
+          views,
+          comments,
+          downloads,
+        }) => {
+          return `<div class="photo-card">
                     <a class="gallery__item" href="${largeImageURL}">
                         <img class="gallery__image" src="${webformatURL}" alt="${tags}" loading="lazy"/>
                     </a>
@@ -36,10 +37,11 @@ export default function renderGallery(images) {
                         </p>
                     </div>
                 </div>`;
-      }
-    )
-    .join('');
+        }
+      )
+      .join('');
 
-  document.querySelector('.gallery').insertAdjacentHTML('beforeend', markup);
-  lightbox.refresh();
+    document.querySelector('.gallery').insertAdjacentHTML('beforeend', markup);
+    lightbox.refresh();
+  }
 }

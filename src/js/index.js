@@ -1,8 +1,4 @@
 import '../css/styles.css';
-
-// import axios from 'axios';
-// import randomWords from 'random-words';
-
 import SearchApiService from './fetch-image';
 import Utils from './util';
 import renderGallery from './render-gallery';
@@ -23,22 +19,30 @@ refs.themeBtnL.addEventListener('click', refs.utils.darkMode);
 refs.themeBtnD.addEventListener('click', refs.utils.darkMode);
 refs.resetBtn.addEventListener('click', refs.utils.refreshPage);
 
-function onSearch(event) {
+async function onSearch(event) {
   event.preventDefault();
 
   refs.searchApiService.query = event.currentTarget.elements.searchQuery.value;
   refs.searchApiService.resetPage();
   refs.utils.clearGallery();
-  refs.searchApiService
-    .fetchImage()
-    .then(refs.utils.searchSubmitFilter)
-    .then(renderGallery);
+
+  try {
+    const fetchData = await refs.searchApiService.fetchImage();
+    const filter = await refs.utils.searchSubmitFilter(fetchData);
+    const render = await renderGallery(filter);
+  } catch (error) {
+    console.log(error);
+  }
+
   refs.utils.addLoadMore();
 }
 
-function onLoadMoreBtnClick() {
-  refs.searchApiService
-    .fetchImage()
-    .then(refs.utils.loadMoreFilter)
-    .then(renderGallery);
+async function onLoadMoreBtnClick() {
+  try {
+    const fetchData = await refs.searchApiService.fetchImage();
+    const filter = await refs.utils.loadMoreFilter(fetchData);
+    const render = await renderGallery(filter);
+  } catch (error) {
+    console.log(error);
+  }
 }

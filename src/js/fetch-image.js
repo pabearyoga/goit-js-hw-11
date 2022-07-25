@@ -1,4 +1,6 @@
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
+import axios from 'axios';
+
 export default class SearchApiService {
   constructor() {
     this.searchQuery = '';
@@ -7,23 +9,22 @@ export default class SearchApiService {
     this.perPage = this.per_page;
   }
 
-  fetchImage() {
+  async fetchImage() {
     const KEY = '28778434-1483e606d41ba08d2549939d9';
     Loading.pulse({
       svgColor: '#4169e1',
     });
-    return fetch(
-      `https://pixabay.com/api/?key=${KEY}&q=${this.searchQuery}&image_type=photo&orientation=horizontal&safesearch=true&per_page=${this.perPage}&page=${this.page}`
-    ).then(response => {
-      if (!response.ok) {
-        throw new Error(response.status);
-      }
-      return response.json().then(data => {
-        this.incrementPage();
-        Loading.remove();
-        return data;
-      });
-    });
+    this.incrementPage();
+    try {
+      const response = await axios.get(
+        `https://pixabay.com/api/?key=${KEY}&q=${this.searchQuery}&image_type=photo&orientation=horizontal&safesearch=true&per_page=${this.perPage}&page=${this.page}`
+      );
+      const data = await response.data;
+      Loading.remove();
+      return data;
+    } catch (error) {
+      console.log(error.message);
+    }
   }
 
   incrementPage() {
