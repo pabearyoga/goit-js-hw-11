@@ -28,6 +28,7 @@ export default class Utils {
   }
 
   loadMoreFilter(value) {
+    // if (value !== undefined) {
     searchApiService.incrementPerPage();
     if (value.totalHits < searchApiService.perPage) {
       document.querySelector('.load-more').classList.remove('hiden');
@@ -36,6 +37,8 @@ export default class Utils {
         "We're sorry, but you've reached the end of search results.",
         'Okay'
       );
+      // }
+      // }
     }
     return value;
   }

@@ -25,6 +25,7 @@ async function onSearch(event) {
   refs.searchApiService.query = event.currentTarget.elements.searchQuery.value;
   refs.searchApiService.resetPage();
   refs.utils.clearGallery();
+  refs.utils.addLoadMore();
 
   try {
     const fetchData = await refs.searchApiService.fetchImage();
@@ -33,8 +34,6 @@ async function onSearch(event) {
   } catch (error) {
     console.log(error);
   }
-
-  refs.utils.addLoadMore();
 }
 
 async function onLoadMoreBtnClick() {
