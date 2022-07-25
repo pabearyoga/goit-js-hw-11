@@ -30,7 +30,7 @@ export default class Utils {
   loadMoreFilter(value) {
     searchApiService.incrementPerPage();
     if (value.totalHits <= searchApiService.perPage) {
-      Report.info(
+      Report.failure(
         'Search',
         "We're sorry, but you've reached the end of search results.",
         'Okay'
