@@ -3,7 +3,7 @@ import '../css/text-anim.css';
 import SearchApiService from './fetch-image';
 import Utils from './util';
 import renderGallery from './render-gallery';
-
+import scroll from './scroll';
 const refs = {
   searchForm: document.querySelector('.search-form'),
   loadMoreBtn: document.querySelector('.load-more'),
@@ -35,6 +35,7 @@ async function onSearch(event) {
   } catch (error) {
     console.log(error);
   }
+  scroll();
 }
 
 async function onLoadMoreBtnClick() {
@@ -45,4 +46,5 @@ async function onLoadMoreBtnClick() {
   } catch (error) {
     console.log(error);
   }
+  scroll();
 }
