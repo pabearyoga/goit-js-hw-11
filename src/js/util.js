@@ -1,8 +1,10 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { Report } from 'notiflix/build/notiflix-report-aio';
 import SearchApiService from './get-image';
+import Random from './random';
 import swal from 'sweetalert';
 const searchApiService = new SearchApiService();
+const random = new Random();
 
 export default class Utils {
   clearGallery() {
@@ -62,6 +64,7 @@ export default class Utils {
     document.querySelector('.search').classList.remove('search-fixed');
     document.querySelector('.gallery').innerHTML = '';
     document.querySelector('.search-form').reset();
+    random.randomBtn();
 
     if (document.querySelector('.start-page').classList.contains('hide')) {
       document.querySelector('.start-page').classList.remove('hide');
