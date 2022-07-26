@@ -9,8 +9,7 @@ export default class Random {
   constructor() {}
 
   randomSearch() {
-    document.querySelector('[name="searchQuery"').value = '';
-    if (document.querySelector('[name="searchQuery"').value === '') {
+    if (document.querySelector('.search-btn').textContent === 'Random') {
       document.querySelector('[name="searchQuery"').value = randomWords();
       document.querySelector('.search-btn').click();
     }

@@ -9,6 +9,7 @@ import Random from './random';
 
 const refs = {
   searchForm: document.querySelector('.search-form'),
+  searchInput: document.querySelector('[name="searchQuery"'),
   searchBtn: document.querySelector('.search-btn'),
   loadMoreBtn: document.querySelector('.load-more'),
   searchApiService: new SearchApiService(),
@@ -22,7 +23,7 @@ const refs = {
 refs.searchForm.addEventListener('submit', onSearch);
 refs.loadMoreBtn.addEventListener('click', onLoadMoreBtnClick);
 refs.searchBtn.addEventListener('click', refs.random.randomSearch);
-refs.searchForm.addEventListener('input', refs.random.randomBtn);
+refs.searchInput.addEventListener('input', refs.random.randomBtn);
 refs.themeBtnL.addEventListener('click', refs.utils.darkMode);
 refs.themeBtnD.addEventListener('click', refs.utils.darkMode);
 refs.resetBtn.addEventListener('click', refs.utils.refreshPage);
