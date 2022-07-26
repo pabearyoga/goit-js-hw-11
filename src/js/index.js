@@ -1,9 +1,11 @@
 import '../css/styles.css';
 import '../css/text-anim.css';
+import 'animate.css';
 import SearchApiService from './fetch-image';
 import Utils from './util';
 import renderGallery from './render-gallery';
 import scroll from './scroll';
+
 const refs = {
   searchForm: document.querySelector('.search-form'),
   loadMoreBtn: document.querySelector('.load-more'),
@@ -27,6 +29,7 @@ async function onSearch(event) {
   refs.searchApiService.resetPage();
   refs.utils.clearGallery();
   refs.utils.addLoadMore();
+  refs.utils.hideStartTitle();
 
   try {
     const fetchData = await refs.searchApiService.fetchImage();

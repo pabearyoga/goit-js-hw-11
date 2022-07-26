@@ -62,5 +62,13 @@ export default class Utils {
     document.querySelector('.search').classList.remove('search-fixed');
     document.querySelector('.gallery').innerHTML = '';
     document.querySelector('.search-form').reset();
+
+    if (document.querySelector('.start-page').classList.contains('hide')) {
+      document.querySelector('.start-page').classList.remove('hide');
+    }
+  }
+
+  hideStartTitle() {
+    document.querySelector('.start-page').classList.add('hide');
   }
 }
