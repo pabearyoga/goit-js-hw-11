@@ -132,9 +132,11 @@ span:nth-child(20) {
   border: 1px solid royalblue;
   border-radius: 50px;
   overflow: hidden;
+  cursor: pointer;
 }
 
-.circle-animation:hover {
+.circle-animation:hover,
+.circle-animation:focus {
   box-shadow: 0 2px 8px 1px #4169e1e6;
 }
 

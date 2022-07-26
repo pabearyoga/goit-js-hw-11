@@ -217,3 +217,7 @@ input {
   background-color: rgb(48 49 52);
   color: white;
 }
+
+.hidden {
+  visibility: hidden;
+}

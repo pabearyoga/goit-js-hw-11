@@ -65,6 +65,8 @@ export default class Utils {
     document.querySelector('.gallery').innerHTML = '';
     document.querySelector('.search-form').reset();
     random.randomBtn();
+    document.querySelector('.circle-animation').classList.remove('hide');
+    document.querySelector('.search').classList.add('hidden');
 
     if (document.querySelector('.start-page').classList.contains('hide')) {
       document.querySelector('.start-page').classList.remove('hide');
@@ -75,3 +77,12 @@ export default class Utils {
     document.querySelector('.start-page').classList.add('hide');
   }
 }
+
+// document
+//   .querySelector('.circle-animation')
+//   .addEventListener('click', onTitleClick);
+
+// function onTitleClick() {
+//   document.querySelector('.circle-animation').classList.add('hide');
+//   document.querySelector('.search').classList.remove('hidden');
+// }

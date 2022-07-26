@@ -59,3 +59,12 @@ async function onLoadMoreBtnClick() {
   }
   scroll();
 }
+
+document
+  .querySelector('.circle-animation')
+  .addEventListener('click', onTitleClick);
+
+function onTitleClick() {
+  document.querySelector('.circle-animation').classList.add('hide');
+  document.querySelector('.search').classList.remove('hidden');
+}
