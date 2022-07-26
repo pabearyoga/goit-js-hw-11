@@ -128,13 +128,20 @@ span:nth-child(20) {
   background-color: #22475e;
   overflow: hidden;
 }
+
 .circle-animation div {
   width: 30px;
   height: 30px;
   position: absolute;
-  background-color: #ccc;
-  top: 45%;
+  background-color: red;
+  top: 40%;
   border-radius: 50%;
+}
+
+@media screen and (max-width: 540px) {
+  .circle-animation div {
+    top: 35%;
+  }
 }
 
 .circle-animation div:nth-child(1) {

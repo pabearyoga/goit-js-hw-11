@@ -48,6 +48,12 @@ a {
   box-shadow: 0 2px 8px 1px rgba(65, 105, 225, 0.9);
 }
 
+@media screen and (max-width: 540px) {
+  .search-form {
+    width: 280px;
+  }
+}
+
 input {
   height: 35px;
   width: 87%;
