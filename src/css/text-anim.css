@@ -134,6 +134,10 @@ span:nth-child(20) {
   overflow: hidden;
 }
 
+.circle-animation:hover {
+  box-shadow: 0 2px 8px 1px #4169e1e6;
+}
+
 .circle-animation div {
   width: 30px;
   height: 30px;
