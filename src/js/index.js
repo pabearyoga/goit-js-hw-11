@@ -1,15 +1,18 @@
 import '../css/styles.css';
 import '../css/text-anim.css';
 import 'animate.css';
-import SearchApiService from './fetch-image';
+import SearchApiService from './get-image';
 import Utils from './util';
 import renderGallery from './render-gallery';
 import scroll from './scroll';
+import Random from './random';
 
 const refs = {
   searchForm: document.querySelector('.search-form'),
+  searchBtn: document.querySelector('.search-btn'),
   loadMoreBtn: document.querySelector('.load-more'),
   searchApiService: new SearchApiService(),
+  random: new Random(),
   utils: new Utils(),
   themeBtnL: document.querySelector('.them-l'),
   themeBtnD: document.querySelector('.them-d'),
@@ -18,9 +21,13 @@ const refs = {
 
 refs.searchForm.addEventListener('submit', onSearch);
 refs.loadMoreBtn.addEventListener('click', onLoadMoreBtnClick);
+refs.searchBtn.addEventListener('click', refs.random.randomSearch);
+refs.searchForm.addEventListener('input', refs.random.randomBtn);
 refs.themeBtnL.addEventListener('click', refs.utils.darkMode);
 refs.themeBtnD.addEventListener('click', refs.utils.darkMode);
 refs.resetBtn.addEventListener('click', refs.utils.refreshPage);
+
+refs.random.randomBtn();
 
 async function onSearch(event) {
   event.preventDefault();

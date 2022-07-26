@@ -1,6 +1,6 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { Report } from 'notiflix/build/notiflix-report-aio';
-import SearchApiService from './fetch-image';
+import SearchApiService from './get-image';
 import swal from 'sweetalert';
 const searchApiService = new SearchApiService();
 
