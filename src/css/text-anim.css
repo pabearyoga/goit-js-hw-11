@@ -21,7 +21,7 @@
 }
 
 .start-page__title {
-  max-width: 750px;
+  width: 100%;
   text-align: center;
   transform: scale(0.94);
   animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
@@ -125,7 +125,12 @@ span:nth-child(20) {
 }
 
 .circle-animation {
-  background-color: #22475e;
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background-color: transparent;
+  border: 1px solid royalblue;
+  border-radius: 50px;
   overflow: hidden;
 }
 
@@ -134,14 +139,9 @@ span:nth-child(20) {
   height: 30px;
   position: absolute;
   background-color: red;
-  top: 40%;
+  top: 50%;
+  transform: translateY(-50%);
   border-radius: 50%;
-}
-
-@media screen and (max-width: 540px) {
-  .circle-animation div {
-    top: 35%;
-  }
 }
 
 .circle-animation div:nth-child(1) {
