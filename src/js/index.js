@@ -8,6 +8,7 @@ import Utils from './util';
 import renderGallery from './render-gallery';
 import scroll from './scroll';
 import Random from './random';
+import HistorySearchApi from './history-search';
 
 const refs = {
   searchForm: document.querySelector('.search-form'),
@@ -18,6 +19,7 @@ const refs = {
   searchApiService: new SearchApiService(),
   random: new Random(),
   utils: new Utils(),
+  historySearch: new HistorySearchApi(),
   themeBtnL: document.querySelector('.them-l'),
   themeBtnD: document.querySelector('.them-d'),
   resetBtn: document.querySelector('.reset'),
@@ -25,6 +27,11 @@ const refs = {
 };
 
 refs.searchForm.addEventListener('submit', onSearch);
+refs.searchForm.addEventListener(
+  'submit',
+  refs.historySearch.renderHistorySearch
+);
+
 refs.loadMoreBtn.addEventListener('click', onLoadMoreBtnClick);
 refs.searchBtn.addEventListener('click', refs.random.randomSearch);
 refs.searchInput.addEventListener('input', refs.random.randomBtn);
@@ -65,3 +72,5 @@ async function onLoadMoreBtnClick() {
   }
   scroll();
 }
+
+console.log(refs.searchForm.currentTarget);

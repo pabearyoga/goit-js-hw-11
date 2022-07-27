@@ -21,7 +21,7 @@
 }
 
 .history-search__aaa {
-  display: block;
+  /* display: block; */
   padding: 10px;
   background-color: royalblue;
   border: none;
@@ -42,7 +42,4 @@
 
 .history-search__title {
   min-width: 110px;
-  background-color: #fff;
-  border: 1px solid royalblue;
-  color: royalblue;
 }

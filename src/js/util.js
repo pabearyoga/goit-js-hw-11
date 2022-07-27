@@ -110,7 +110,6 @@ export default class Utils {
   }
 
   showHistorySearch() {
-    console.log('history');
     document.querySelector('.history-search-wrapper').classList.remove('hide');
 
     if (
