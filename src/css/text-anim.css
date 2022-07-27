@@ -132,6 +132,7 @@ span:nth-child(20) {
   border: 1px solid royalblue;
   border-radius: 50px;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .circle-animation:hover,

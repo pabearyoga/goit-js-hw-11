@@ -32,10 +32,20 @@
   cursor: pointer;
 }
 
+.history-search__aaa:hover {
+  background-color: white;
+  color: royalblue;
+  border: 1px solid royalblue;
+  box-shadow: 0 2px 8px 1px rgba(65, 105, 225, 0.9);
+}
+
 .history-search__aaa:not(:last-child) {
   margin-right: 5px;
 }
 
 .history-search__title {
   min-width: 110px;
+  background-color: #fff;
+  border: 1px solid royalblue;
+  color: royalblue;
 }
