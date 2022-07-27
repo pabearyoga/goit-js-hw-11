@@ -33,10 +33,7 @@
 }
 
 .history-search__aaa:hover {
-  background-color: white;
-  color: royalblue;
-  border: 1px solid royalblue;
-  box-shadow: 0 2px 8px 1px rgba(65, 105, 225, 0.9);
+  box-shadow: 0 2px 8px 1px #4169e1e6;
 }
 
 .history-search__aaa:not(:last-child) {

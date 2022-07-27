@@ -48,24 +48,17 @@ export default class Utils {
     document.querySelector('.reset').classList.toggle('dark-h');
     document.querySelector('.history-btn').classList.toggle('dark-h');
     document.querySelector('.history-search').style.backgroundColor = '#fff';
-    document.querySelector('.history-search__title').style.backgroundColor =
-      '#fff';
 
     if (document.querySelector('.search').classList.contains('dark')) {
       document.querySelector('.them-l').style.display = 'none';
       document.querySelector('.them-d').style.display = 'block';
       document.querySelector('.history-search').style.backgroundColor =
         '#303134';
-      document.querySelector('.history-search__title').style.backgroundColor =
-        '#303134';
 
       return;
     }
     document.querySelector('.them-d').style.display = 'none';
     document.querySelector('.them-l').style.display = 'block';
-    // document.querySelector('.history-search').style.backgroundColor = '#303134';
-    // document.querySelector('.history-search__title').style.backgroundColor =
-    //   '#303134';
   }
 
   refreshPage() {
