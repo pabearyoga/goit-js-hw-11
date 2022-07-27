@@ -1,5 +1,7 @@
 import '../css/styles.css';
 import '../css/text-anim.css';
+import '../css/history-search.css';
+
 import 'animate.css';
 import SearchApiService from './get-image';
 import Utils from './util';
@@ -11,6 +13,7 @@ const refs = {
   searchForm: document.querySelector('.search-form'),
   searchInput: document.querySelector('[name="searchQuery"'),
   searchBtn: document.querySelector('.search-btn'),
+  historyBtn: document.querySelector('.history-btn'),
   loadMoreBtn: document.querySelector('.load-more'),
   searchApiService: new SearchApiService(),
   random: new Random(),
@@ -28,6 +31,7 @@ refs.searchInput.addEventListener('input', refs.random.randomBtn);
 refs.themeBtnL.addEventListener('click', refs.utils.darkMode);
 refs.themeBtnD.addEventListener('click', refs.utils.darkMode);
 refs.resetBtn.addEventListener('click', refs.utils.refreshPage);
+refs.historyBtn.addEventListener('click', refs.utils.showHistorySearch);
 refs.startAnimation.addEventListener('click', refs.utils.onTitleClick);
 
 refs.random.randomBtn();

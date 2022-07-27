@@ -1,0 +1,41 @@
+.history-search-wrapper {
+  width: 100%;
+  margin: 0;
+}
+
+.history-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 10px auto 0 auto;
+  padding: 5px;
+  width: 80%;
+  height: 100%;
+  background-color: white;
+  border: 1px solid royalblue;
+  border-radius: 50px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px 1px #4169e1e6;
+  z-index: 100;
+  overflow-x: scroll;
+}
+
+.history-search__aaa {
+  display: block;
+  padding: 10px;
+  background-color: royalblue;
+  border: none;
+  border-radius: 50px;
+  height: 40px;
+  font-size: small;
+  color: white;
+  cursor: pointer;
+}
+
+.history-search__aaa:not(:last-child) {
+  margin-right: 5px;
+}
+
+.history-search__title {
+  min-width: 110px;
+}

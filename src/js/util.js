@@ -46,11 +46,12 @@ export default class Utils {
     document.querySelector('.search-form').classList.toggle('input-d');
     document.querySelector('.them-d').classList.toggle('dark-h');
     document.querySelector('.reset').classList.toggle('dark-h');
+    document.querySelector('.history-btn').classList.toggle('dark-h');
+    document.querySelector('.load-more').classList.toggle('dark-h');
 
     if (document.querySelector('.search').classList.contains('dark')) {
       document.querySelector('.them-l').style.display = 'none';
       document.querySelector('.them-d').style.display = 'block';
-      // document.querySelector('.load-more').classList.toggle('dark-h');
       return;
     }
     document.querySelector('.them-d').style.display = 'none';
@@ -100,9 +101,42 @@ export default class Utils {
     document
       .querySelector('.circle-animation')
       .classList.add('animate__backOutUp');
-    // document.querySelector('.circle-animation').classList.add('hide');
     document.querySelector('.search').classList.remove('hidden');
     document.querySelector('.search').classList.add('animate__animated');
     document.querySelector('.search').classList.add('animate__bounceInDown');
+  }
+
+  showHistorySearch() {
+    console.log('history');
+    document.querySelector('.history-search-wrapper').classList.remove('hide');
+
+    if (
+      document
+        .querySelector('.history-search')
+        .classList.contains('animate__animated')
+    ) {
+      document
+        .querySelector('.history-search')
+        .classList.add('animate__backOutUp');
+
+      setTimeout(() => {
+        document
+          .querySelector('.history-search')
+          .classList.remove('animate__animated');
+        document
+          .querySelector('.history-search')
+          .classList.remove('animate__backOutUp');
+        document
+          .querySelector('.history-search-wrapper')
+          .classList.toggle('hide');
+      }, 500);
+    }
+
+    document
+      .querySelector('.history-search')
+      .classList.add('animate__animated');
+    document
+      .querySelector('.history-search')
+      .classList.toggle('animate__bounceInDown');
   }
 }
