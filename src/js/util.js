@@ -1,8 +1,6 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { Report } from 'notiflix/build/notiflix-report-aio';
 import SearchApiService from './get-image';
 import Random from './random';
-import swal from 'sweetalert';
 const searchApiService = new SearchApiService();
 const random = new Random();
 
@@ -66,8 +64,14 @@ export default class Utils {
     document.querySelector('.search-form').reset();
     random.randomBtn();
     document.querySelector('.circle-animation').classList.remove('hide');
-    document.querySelector('.search').classList.add('hidden');
-
+    document.querySelector('.search').classList.remove('animate__bounceInDown');
+    document.querySelector('.search').classList.add('animate__backOutUp');
+    document
+      .querySelector('.circle-animation')
+      .classList.remove('animate__backOutUp');
+    document
+      .querySelector('.circle-animation')
+      .classList.add('animate__bounceInDown');
     if (document.querySelector('.start-page').classList.contains('hide')) {
       document.querySelector('.start-page').classList.remove('hide');
     }
@@ -76,13 +80,29 @@ export default class Utils {
   hideStartTitle() {
     document.querySelector('.start-page').classList.add('hide');
   }
+
+  onTitleClick() {
+    if (
+      document
+        .querySelector('.circle-animation')
+        .classList.contains('animate__animated')
+    ) {
+      document
+        .querySelector('.circle-animation')
+        .classList.remove('animate__animated');
+      document
+        .querySelector('.circle-animation')
+        .classList.remove('animate__bounceInDown');
+    }
+    document
+      .querySelector('.circle-animation')
+      .classList.add('animate__animated');
+    document
+      .querySelector('.circle-animation')
+      .classList.add('animate__backOutUp');
+    // document.querySelector('.circle-animation').classList.add('hide');
+    document.querySelector('.search').classList.remove('hidden');
+    document.querySelector('.search').classList.add('animate__animated');
+    document.querySelector('.search').classList.add('animate__bounceInDown');
+  }
 }
-
-// document
-//   .querySelector('.circle-animation')
-//   .addEventListener('click', onTitleClick);
-
-// function onTitleClick() {
-//   document.querySelector('.circle-animation').classList.add('hide');
-//   document.querySelector('.search').classList.remove('hidden');
-// }

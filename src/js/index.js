@@ -18,6 +18,7 @@ const refs = {
   themeBtnL: document.querySelector('.them-l'),
   themeBtnD: document.querySelector('.them-d'),
   resetBtn: document.querySelector('.reset'),
+  startAnimation: document.querySelector('.circle-animation'),
 };
 
 refs.searchForm.addEventListener('submit', onSearch);
@@ -27,6 +28,7 @@ refs.searchInput.addEventListener('input', refs.random.randomBtn);
 refs.themeBtnL.addEventListener('click', refs.utils.darkMode);
 refs.themeBtnD.addEventListener('click', refs.utils.darkMode);
 refs.resetBtn.addEventListener('click', refs.utils.refreshPage);
+refs.startAnimation.addEventListener('click', refs.utils.onTitleClick);
 
 refs.random.randomBtn();
 
@@ -58,13 +60,4 @@ async function onLoadMoreBtnClick() {
     console.log(error);
   }
   scroll();
-}
-
-document
-  .querySelector('.circle-animation')
-  .addEventListener('click', onTitleClick);
-
-function onTitleClick() {
-  document.querySelector('.circle-animation').classList.add('hide');
-  document.querySelector('.search').classList.remove('hidden');
 }
