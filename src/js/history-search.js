@@ -44,6 +44,7 @@ export default class HistorySearchApi {
     if (event.target.classList.contains('history-search__title')) {
       return;
     }
+    document.querySelector('.search-btn').textContent = 'Search';
     document.querySelector('[name="searchQuery"').value =
       event.target.textContent;
 
