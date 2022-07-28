@@ -32,7 +32,8 @@ export default class HistorySearchApi {
       .classList.toggle('animate__bounceInDown');
   }
 
-  renderHistorySearch() {
+  renderHistorySearch(event) {
+    event.preventDefault();
     const a = document.querySelector('[name="searchQuery"]').value;
     const markup = `<div class="history-search__aaa">${a}</div>`;
     document
