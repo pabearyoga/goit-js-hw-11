@@ -1,8 +1,6 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import SearchApiService from './get-image';
-import Random from './random';
 const searchApiService = new SearchApiService();
-const random = new Random();
 
 export default class Utils {
   clearGallery() {
@@ -61,26 +59,6 @@ export default class Utils {
     document.querySelector('.them-l').style.display = 'block';
   }
 
-  refreshPage() {
-    document.querySelector('.load-more').classList.remove('hiden');
-    document.querySelector('.search').classList.remove('search-fixed');
-    document.querySelector('.gallery').innerHTML = '';
-    document.querySelector('.search-form').reset();
-    random.randomBtn();
-    document.querySelector('.circle-animation').classList.remove('hide');
-    document.querySelector('.search').classList.remove('animate__bounceInDown');
-    document.querySelector('.search').classList.add('animate__backOutUp');
-    document
-      .querySelector('.circle-animation')
-      .classList.remove('animate__backOutUp');
-    document
-      .querySelector('.circle-animation')
-      .classList.add('animate__bounceInDown');
-    if (document.querySelector('.start-page').classList.contains('hide')) {
-      document.querySelector('.start-page').classList.remove('hide');
-    }
-  }
-
   hideStartTitle() {
     document.querySelector('.start-page').classList.add('hide');
   }
@@ -107,38 +85,5 @@ export default class Utils {
     document.querySelector('.search').classList.remove('hidden');
     document.querySelector('.search').classList.add('animate__animated');
     document.querySelector('.search').classList.add('animate__bounceInDown');
-  }
-
-  showHistorySearch() {
-    document.querySelector('.history-search-wrapper').classList.remove('hide');
-
-    if (
-      document
-        .querySelector('.history-search')
-        .classList.contains('animate__animated')
-    ) {
-      document
-        .querySelector('.history-search')
-        .classList.add('animate__backOutUp');
-
-      setTimeout(() => {
-        document
-          .querySelector('.history-search')
-          .classList.remove('animate__animated');
-        document
-          .querySelector('.history-search')
-          .classList.remove('animate__backOutUp');
-        document
-          .querySelector('.history-search-wrapper')
-          .classList.toggle('hide');
-      }, 500);
-    }
-
-    document
-      .querySelector('.history-search')
-      .classList.add('animate__animated');
-    document
-      .querySelector('.history-search')
-      .classList.toggle('animate__bounceInDown');
   }
 }

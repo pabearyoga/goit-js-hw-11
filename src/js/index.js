@@ -9,6 +9,7 @@ import renderGallery from './render-gallery';
 import scroll from './scroll';
 import Random from './random';
 import HistorySearchApi from './history-search';
+import homePage from './home-page';
 
 const refs = {
   searchForm: document.querySelector('.search-form'),
@@ -33,8 +34,11 @@ refs.searchBtn.addEventListener('click', refs.random.randomSearch);
 refs.searchInput.addEventListener('input', refs.random.randomBtn);
 refs.themeBtnL.addEventListener('click', refs.utils.darkMode);
 refs.themeBtnD.addEventListener('click', refs.utils.darkMode);
-refs.resetBtn.addEventListener('click', refs.utils.refreshPage);
-refs.historyBtn.addEventListener('click', refs.utils.showHistorySearch);
+refs.resetBtn.addEventListener('click', homePage);
+refs.historyBtn.addEventListener(
+  'click',
+  refs.historySearchApi.showHistorySearch
+);
 refs.searchForm.addEventListener(
   'submit',
   refs.historySearchApi.renderHistorySearch
@@ -76,5 +80,3 @@ async function onLoadMoreBtnClick() {
   }
   scroll();
 }
-
-console.log(refs.searchForm.currentTarget);
