@@ -64,6 +64,4 @@ export default class Utils {
     document.querySelector('.search').classList.add('animate__animated');
     document.querySelector('.search').classList.add('animate__bounceInDown');
   }
-
-  resetPage() {}
 }

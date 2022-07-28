@@ -48,15 +48,9 @@ a {
   box-shadow: 0 2px 8px 1px rgba(65, 105, 225, 0.9);
 }
 
-@media screen and (max-width: 540px) {
-  .search-form {
-    width: 280px;
-  }
-}
-
 input {
   height: 35px;
-  width: 87%;
+  width: 80%;
   background-color: transparent;
   border: none;
   outline: none;
@@ -172,7 +166,7 @@ input {
 .them-l,
 .them-d,
 .history-btn,
-.reset,
+.home,
 .dark-h {
   display: block;
   height: 34px;
@@ -189,7 +183,7 @@ input {
 .them-l:hover,
 .them-d:hover,
 .history-btn:hover,
-.reset:hover,
+.home:hover,
 .load-more:hover {
   background-color: white;
   color: royalblue;
@@ -220,4 +214,14 @@ input {
 
 .hidden {
   visibility: hidden;
+}
+
+@media screen and (max-width: 540px) {
+  .search-form {
+    width: 280px;
+  }
+
+  input {
+    width: 65%;
+  }
 }

@@ -24,7 +24,7 @@ const refs = {
   historySearchApi: new HistorySearchApi(),
   themeBtnL: document.querySelector('.them-l'),
   themeBtnD: document.querySelector('.them-d'),
-  resetBtn: document.querySelector('.reset'),
+  homeBtn: document.querySelector('.home'),
   startAnimation: document.querySelector('.circle-animation'),
   historySearch: document.querySelector('.history-search'),
 };
@@ -35,7 +35,7 @@ refs.searchBtn.addEventListener('click', refs.random.randomSearch);
 refs.searchInput.addEventListener('input', refs.random.randomBtn);
 refs.themeBtnL.addEventListener('click', darkMode);
 refs.themeBtnD.addEventListener('click', darkMode);
-refs.resetBtn.addEventListener('click', homePage);
+refs.homeBtn.addEventListener('click', homePage);
 refs.historyBtn.addEventListener(
   'click',
   refs.historySearchApi.showHistorySearch
