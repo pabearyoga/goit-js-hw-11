@@ -10,6 +10,7 @@ import scroll from './scroll';
 import Random from './random';
 import HistorySearchApi from './history-search';
 import homePage from './home-page';
+import darkMode from './dark-mode';
 
 const refs = {
   searchForm: document.querySelector('.search-form'),
@@ -32,8 +33,8 @@ refs.searchForm.addEventListener('submit', onSearch);
 refs.loadMoreBtn.addEventListener('click', onLoadMoreBtnClick);
 refs.searchBtn.addEventListener('click', refs.random.randomSearch);
 refs.searchInput.addEventListener('input', refs.random.randomBtn);
-refs.themeBtnL.addEventListener('click', refs.utils.darkMode);
-refs.themeBtnD.addEventListener('click', refs.utils.darkMode);
+refs.themeBtnL.addEventListener('click', darkMode);
+refs.themeBtnD.addEventListener('click', darkMode);
 refs.resetBtn.addEventListener('click', homePage);
 refs.historyBtn.addEventListener(
   'click',
