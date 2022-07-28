@@ -4,7 +4,7 @@ export default function darkMode() {
   document.querySelector('[name="searchQuery"]').classList.toggle('input-d');
   document.querySelector('.search-form').classList.toggle('input-d');
   document.querySelector('.them-d').classList.toggle('dark-h');
-  document.querySelector('.reset').classList.toggle('dark-h');
+  document.querySelector('.home').classList.toggle('dark-h');
   document.querySelector('.history-btn').classList.toggle('dark-h');
   document.querySelector('.history-search').style.backgroundColor = '#fff';
 
