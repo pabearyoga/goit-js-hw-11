@@ -7,5 +7,15 @@ export default class HistorySearchApi {
       .insertAdjacentHTML('beforeend', markup);
   }
 
-  onHistorySearchItemClick(event) {}
+  onHistorySearchItemClick(event) {
+    if (event.target.classList.contains('history-search__title')) {
+      return;
+    }
+    document.querySelector('[name="searchQuery"').value =
+      event.target.textContent;
+
+    setTimeout(() => {
+      document.querySelector('.search-btn').click();
+    }, 100);
+  }
 }

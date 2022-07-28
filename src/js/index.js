@@ -19,19 +19,15 @@ const refs = {
   searchApiService: new SearchApiService(),
   random: new Random(),
   utils: new Utils(),
-  historySearch: new HistorySearchApi(),
+  historySearchApi: new HistorySearchApi(),
   themeBtnL: document.querySelector('.them-l'),
   themeBtnD: document.querySelector('.them-d'),
   resetBtn: document.querySelector('.reset'),
   startAnimation: document.querySelector('.circle-animation'),
+  historySearch: document.querySelector('.history-search'),
 };
 
 refs.searchForm.addEventListener('submit', onSearch);
-refs.searchForm.addEventListener(
-  'submit',
-  refs.historySearch.renderHistorySearch
-);
-
 refs.loadMoreBtn.addEventListener('click', onLoadMoreBtnClick);
 refs.searchBtn.addEventListener('click', refs.random.randomSearch);
 refs.searchInput.addEventListener('input', refs.random.randomBtn);
@@ -39,6 +35,14 @@ refs.themeBtnL.addEventListener('click', refs.utils.darkMode);
 refs.themeBtnD.addEventListener('click', refs.utils.darkMode);
 refs.resetBtn.addEventListener('click', refs.utils.refreshPage);
 refs.historyBtn.addEventListener('click', refs.utils.showHistorySearch);
+refs.searchForm.addEventListener(
+  'submit',
+  refs.historySearchApi.renderHistorySearch
+);
+refs.historySearch.addEventListener(
+  'click',
+  refs.historySearchApi.onHistorySearchItemClick
+);
 refs.startAnimation.addEventListener('click', refs.utils.onTitleClick);
 
 refs.random.randomBtn();
