@@ -57,8 +57,9 @@ export default class Utils {
     document
       .querySelector('.circle-animation')
       .classList.add('animate__animated');
-    document.querySelector('.circle-animation');
-    // .classList.add('animate__backOutUp');
+    document
+      .querySelector('.circle-animation')
+      .classList.add('animate__backOutUp');
     document
       .querySelector('.search')
       .classList.replace('hidden', 'animate__animated');
