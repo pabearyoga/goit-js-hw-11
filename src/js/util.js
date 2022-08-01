@@ -50,9 +50,8 @@ export default class Utils {
       document
         .querySelector('.circle-animation')
         .classList.remove('animate__animated');
-      document
-        .querySelector('.circle-animation')
-        .classList.remove('animate__bounceInDown');
+      document.querySelector('.circle-animation');
+      // .classList.remove('animate__bounceInDown');
     }
     document
       .querySelector('.circle-animation')
